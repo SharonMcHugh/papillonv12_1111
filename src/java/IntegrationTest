@@ -1,0 +1,36 @@
+package resource;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class IntegrationTest {
+
+	DataCenters dcTester;
+//	static Connection connect ; 
+
+	@Before
+	public void setUp() throws Exception {
+		dcTester = new DataCenters();
+//		connect = new Connection();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		dcTester = null;
+	}
+
+	@Test
+	public void testHost() {
+		
+		//have created a datacenters object which need to make API calls to work
+		
+		assertNotNull(dcTester.getDatacenters().get(0).floors.get(0).racks.get(0).hosts.get(0));
+	
+		
+
+	}
+}
